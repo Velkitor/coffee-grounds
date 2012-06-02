@@ -4,13 +4,12 @@
 I wrote this to prove an easy way to access your rails routes from your client side javascript.  Have you ever wanted to do something like $.get( blog_post_path({id: 1}) )?  Well this will let you do that!
 
 ==How do I use it?
-add this gem to your Gemfile
-_gem 'coffee-grounds'_
-_bundle install_
-
-To generate the javascript file run:
-_rake coffee-grounds:compile-asset_
-This will generate a coffee-grounds.js file in your app/assets/javascripts folder.
+(1) add this gem to your Gemfile
+  * gem 'coffee-grounds'
+(2) bundle install
+(3) generate the javascript file
+  * rake coffee-grounds:compile-asset
+    This will generate a coffee-grounds.js file in your app/assets/javascripts folder.
 
 All of your named routes will show up under an App object that is defined on the window.
 To access a route all you need to do is call App.routes.<route_name_path>()
