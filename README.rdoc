@@ -23,12 +23,12 @@ App.routes.foo_path( { id: "bar" }, "html" )
 That will return "/foo/bar.html"
 
 I have also added easy ways to get and post data.
-App.request.<named_route>_path() will execute a JQuery get to the specified route.
-App.post.<named_route>_path() will execute a JQuery post to the specified route.
+* App.request.<named_route>_path() will execute a JQuery get to the specified route.
+* App.post.<named_route>_path() will execute a JQuery post to the specified route.
 
-Both functions take the following optional arguments:\
-identifiers: an object with keys and values corresponding to your defined rails routes\
-params: an object containing the params to be sent with the request.  (This is just passed down to JQuery )\
-a function: this will be executed on a successful callback ( also passed to JQuery )\
-format: This format is both used in building the url, and passed to JQuery so that JQuery knows whats going on.\
+Both functions take the following optional arguments:
+* identifiers: an object with keys and values corresponding to your defined rails routes
+* params: an object containing the params to be sent with the request.  (This is just passed down to JQuery )
+* function: this will be executed on a successful callback ( also passed to JQuery )
+* format: This format is both used in building the url, and passed to JQuery so that JQuery knows whats going on.
 
