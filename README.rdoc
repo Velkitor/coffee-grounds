@@ -1,3 +1,34 @@
 = CoffeeGrounds
 
-This project rocks and uses MIT-LICENSE.
+== Purpose
+I wrote this to prove an easy way to access your rails routes from your client side javascript.  Have you ever wanted to do something like $.get( blog_post_path({id: 1}) )?  Well this will let you do that!
+
+==How do I use it?
+add this gem to your Gemfile
+_gem 'coffee-grounds'_
+_bundle install_
+
+To generate the javascript file run:
+_rake coffee-grounds:compile-asset_
+This will generate a coffee-grounds.js file in your app/assets/javascripts folder.
+
+All of your named routes will show up under an App object that is defined on the window.
+To access a route all you need to do is call App.routes.<route_name_path>()
+This function takes optional arguments, the first optional argument is an object containing identifiers and their values, and the second argument is the requested format.
+
+==Cool additions
+Example:
+You have a rails route that is: /foo/:id(.format) (named as foo) and you would like to get the path for an id of 'bar' and request it as html.
+App.routes.foo_path( { id: "bar" }, "html" )
+That will return "/foo/bar.html"
+
+I have also added easy ways to get and post data.
+App.request.<named_route>_path() will execute a JQuery get to the specified route.
+App.post.<named_route>_path() will execute a JQuery post to the specified route.
+
+Both functions take the following optional arguments:
+identifiers: an object with keys and values corresponding to your defined rails routes
+params: an object containing the params to be sent with the request.  (This is just passed down to JQuery )
+a function: this will be executed on a successful callback ( also passed to JQuery )
+format: This format is both used in building the url, and passed to JQuery so that JQuery knows whats going on.
+
