@@ -32,3 +32,20 @@ Both functions take the following optional arguments:
 * function: this will be executed on a successful callback ( also passed to JQuery )
 * format: This format is both used in building the url, and passed to JQuery so that JQuery knows whats going on.
 
+I also added a helper function to help init your coffee script on your pages.
+ * haml =coffee_grounds_script_tag.html_safe
+ * erb <%= coffee_grounds_script_tag.html_safe %>
+
+This will attempt to call:
+ * App.<controller_name>.init()
+ * App.<controller_name>.<action_name>.init()
+
+You can specify the JavaScript name space by passing it in to the helper function.
+
+Your CoffeeScript file should have a section defining your init functions for each action.  It would look something like:
+ App.home =
+  init: ->
+   Bind your clicks and do some cool stuff for all actions in this controller
+  index:
+    init: ->
+      Bind your clicks and do cool stuff for only the index.
