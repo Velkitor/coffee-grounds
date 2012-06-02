@@ -32,7 +32,7 @@ Both functions take the following optional arguments:
 * function: this will be executed on a successful callback ( also passed to JQuery )
 * format: This format is both used in building the url, and passed to JQuery so that JQuery knows whats going on.
 
-I also added a helper function to help init your coffee script on your pages.
+I also added a helper function to help init your coffee script on your pages, just include the following after your application javascript.
  * haml =coffee_grounds_script_tag.html_safe
  * erb <%= coffee_grounds_script_tag.html_safe %>
 
