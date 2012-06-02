@@ -7,6 +7,7 @@ I wrote this to prove an easy way to access your rails routes from your client s
 (1) add this gem to your Gemfile
   * gem 'coffee-grounds'
 (2) bundle install
+
 (3) generate the javascript file
   * rake coffee-grounds:compile-asset
     This will generate a coffee-grounds.js file in your app/assets/javascripts folder.
